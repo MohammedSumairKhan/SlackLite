@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Slack Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen flex overflow-hidden">
+    <!-- Sidebar -->
+    <div class="bg-gray-900 text-white w-64 flex flex-col">
+        <div class="flex items-center justify-center h-16 border-b border-gray-800">
+            <h1 class="text-xl font-bold">Slack Clone</h1>
+        </div>
+        <div class="flex-1 overflow-y-auto">
+            <div class="p-4">
+                <h2 class="text-gray-400 text-sm uppercase">Channels</h2>
+                <ul class="mt-2">
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="index.html">
+                            <span class="mr-2">#</span>
+                            general
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="random.html">
+                            <span class="mr-2">#</span>
+                            random
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="development.html">
+                            <span class="mr-2">#</span>
+                            development
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="design.html">
+                            <span class="mr-2">#</span>
+                            design
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-4">
+                <h2 class="text-gray-400 text-sm uppercase">Direct Messages</h2>
+                <ul class="mt-2">
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="#">
+                            <img alt="Cartoon avatar of John Doe" class="w-6 h-6 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/ihkp7eR2ozx4BSD9JieUoUzmc4v0fEyxzeeE20xlkPMB0nOeE.jpg" width="32"/>
+                            John Doe
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="#">
+                            <img alt="Cartoon avatar of Jane Smith" class="w-6 h-6 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/TWflI8OAEGwCDqdHaJb9h697CvKT3phl46WkvGcd4LfdepjnA.jpg" width="32"/>
+                            Jane Smith
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="#">
+                            <img alt="Cartoon avatar of Bob Johnson" class="w-6 h-6 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/CilfuS8hZo0SSKRhfm4Yfr1wPi1nrEb36ynqQg1fxx1O6THPB.jpg" width="32"/>
+                            Bob Johnson
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="#">
+                            <img alt="Cartoon avatar of Alice Brown" class="w-6 h-6 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/tw1JUVO1UErvNJYPpQSoTo2sePACRORkNCB8fFSP1fpf5THPB.jpg" width="32"/>
+                            Alice Brown
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="p-4 border-t border-gray-800">
+            <div class="flex items-center">
+                <img alt="Cartoon avatar of current user" class="w-8 h-8 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/7NCGrKQMCt6GOFkCl6eo4AfxudQCKZLXqGyRDMAvX5XiepjnA.jpg" width="32"/>
+                <div>
+                    <p class="text-sm font-medium">Current User</p>
+                    <p class="text-xs text-gray-400">Online</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+        <!-- Header -->
+        <div class="bg-white border-b border-gray-200 flex items-center justify-between h-16 px-4">
+            <div class="flex items-center">
+                <h2 class="text-xl font-bold">#general</h2>
+            </div>
+            <div class="flex items-center">
+                <button class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="ml-4 text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Chat Area -->
+        <div class="flex-1 overflow-y-auto p-4" id="chat-area">
+            <div class="flex items-start mb-4">
+                <img alt="Cartoon avatar of John Doe" class="w-12 h-12 rounded-full mr-4" height="48" src="https://storage.googleapis.com/a1aa/image/ihkp7eR2ozx4BSD9JieUoUzmc4v0fEyxzeeE20xlkPMB0nOeE.jpg" width="48"/>
+                <div>
+                    <div class="flex items-center">
+                        <h3 class="font-bold">John Doe</h3>
+                        <span class="ml-2 text-sm text-gray-500">10:30 AM</span>
+                    </div>
+                    <p class="mt-1">Hey everyone! How's it going?</p>
+                </div>
+            </div>
+            <div class="flex items-start mb-4">
+                <img alt="Cartoon avatar of Jane Smith" class="w-12 h-12 rounded-full mr-4" height="48" src="https://storage.googleapis.com/a1aa/image/TWflI8OAEGwCDqdHaJb9h697CvKT3phl46WkvGcd4LfdepjnA.jpg" width="48"/>
+                <div>
+                    <div class="flex items-center">
+                        <h3 class="font-bold">Jane Smith</h3>
+                        <span class="ml-2 text-sm text-gray-500">10:32 AM</span>
+                    </div>
+                    <p class="mt-1">All good here! How about you?</p>
+                </div>
+            </div>
+            <div class="flex items-start mb-4">
+                <img alt="Cartoon avatar of Bob Johnson" class="w-12 h-12 rounded-full mr-4" height="48" src="https://storage.googleapis.com/a1aa/image/CilfuS8hZo0SSKRhfm4Yfr1wPi1nrEb36ynqQg1fxx1O6THPB.jpg" width="48"/>
+                <div>
+                    <div class="flex items-center">
+                        <h3 class="font-bold">Bob Johnson</h3>
+                        <span class="ml-2 text-sm text-gray-500">10:35 AM</span>
+                    </div>
+                    <p class="mt-1">Doing great! Working on the new project.</p>
+                </div>
+            </div>
+            <div class="flex items-start mb-4">
+                <img alt="Cartoon avatar of Alice Brown" class="w-12 h-12 rounded-full mr-4" height="48" src="https://storage.googleapis.com/a1aa/image/tw1JUVO1UErvNJYPpQSoTo2sePACRORkNCB8fFSP1fpf5THPB.jpg" width="48"/>
+                <div>
+                    <div class="flex items-center">
+                        <h3 class="font-bold">Alice Brown</h3>
+                        <span class="ml-2 text-sm text-gray-500">10:40 AM</span>
+                    </div>
+                    <p class="mt-1">Same here! Excited to see the progress.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Message Input -->
+        <div class="bg-white border-t border-gray-200 p-4">
+            <div class="flex items-center">
+                <input class="flex-1 border border-gray-300 rounded-lg p-2" id="message-input" placeholder="Type a message..." type="text"/>
+                <button class="ml-4 text-gray-500 hover:text-gray-700" id="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Right Sidebar -->
+    <div class="bg-gray-200 w-64 flex flex-col">
+        <div class="flex items-center justify-center h-16 border-b border-gray-300">
+            <h2 class="text-xl font-bold">User Info</h2>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4">
+            <div class="flex items-center mb-4">
+                <img alt="Cartoon avatar of current user" class="w-12 h-12 rounded-full mr-4" height="48" src="https://storage.googleapis.com/a1aa/image/7NCGrKQMCt6GOFkCl6eo4AfxudQCKZLXqGyRDMAvX5XiepjnA.jpg" width="48"/>
+                <div>
+                    <h3 class="font-bold">Current User</h3>
+                    <p class="text-sm text-gray-500">Online</p>
+                </div>
+            </div>
+            <div class="mb-4">
+                <h4 class="font-bold">Status</h4>
+                <p class="text-sm text-gray-500">Working on the new project</p>
+            </div>
+            <div class="mb-4">
+                <h4 class="font-bold">Recent Files</h4>
+                <ul class="mt-2">
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Project Plan.docx
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Design Mockup.png
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Meeting Notes.txt
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h4 class="font-bold">Notifications</h4>
+                <ul class="mt-2">
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fas fa-bell mr-2"></i>
+                            New message from Jane
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fas fa-bell mr-2"></i>
+                            Project deadline approaching
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fas fa-bell mr-2"></i>
+                            Meeting at 3 PM
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h4 class="font-bold">To-Do List</h4>
+                <ul class="mt-2">
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <input class="mr-2" type="checkbox"/>
+                            <span class="text-gray-700">Finish project plan</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <input class="mr-2" type="checkbox"/>
+                            <span class="text-gray-700">Review design mockups</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <input class="mr-2" type="checkbox"/>
+                            <span class="text-gray-700">Prepare for meeting</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h4 class="font-bold">Team Members</h4>
+                <ul class="mt-2">
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <img alt="Cartoon avatar of John Doe" class="w-6 h-6 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/ihkp7eR2ozx4BSD9JieUoUzmc4v0fEyxzeeE20xlkPMB0nOeE.jpg" width="32"/>
+                            <span class="text-gray-700">John Doe</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <img alt="Cartoon avatar of Jane Smith" class="w-6 h-6 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/TWflI8OAEGwCDqdHaJb9h697CvKT3phl46WkvGcd4LfdepjnA.jpg" width="32"/>
+                            <span class="text-gray-700">Jane Smith</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <img alt="Cartoon avatar of Bob Johnson" class="w-6 h-6 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/CilfuS8hZo0SSKRhfm4Yfr1wPi1nrEb36ynqQg1fxx1O6THPB.jpg" width="32"/>
+                            <span class="text-gray-700">Bob Johnson</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <img alt="Cartoon avatar of Alice Brown" class="w-6 h-6 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/tw1JUVO1UErvNJYPpQSoTo2sePACRORkNCB8fFSP1fpf5THPB.jpg" width="32"/>
+                            <span class="text-gray-700">Alice Brown</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h4 class="font-bold">Recent Activity</h4>
+                <ul class="mt-2">
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Completed task "Finish project plan"</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-upload text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">Uploaded "Design Mockup.png"</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-comment text-yellow-500 mr-2"></i>
+                            <span class="text-gray-700">Commented on "Meeting Notes.txt"</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Link to script.js -->
+    <script src="script.js"></script>
+</body>
+</html>

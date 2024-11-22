@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Slack Clone - Random</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen flex overflow-hidden">
+    <!-- Sidebar -->
+    <div class="bg-gray-900 text-white w-64 flex flex-col">
+        <div class="flex items-center justify-center h-16 border-b border-gray-800">
+            <h1 class="text-xl font-bold">Slack Clone</h1>
+        </div>
+        <div class="flex-1 overflow-y-auto">
+            <div class="p-4">
+                <h2 class="text-gray-400 text-sm uppercase">Channels</h2>
+                <ul class="mt-2">
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="index.html">
+                            <span class="mr-2">#</span>
+                            general
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="random.html">
+                            <span class="mr-2">#</span>
+                            random
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="development.html">
+                            <span class="mr-2">#</span>
+                            development
+                        </a>
+                    </li>
+                    <li class="mt-2">
+                        <a class="flex items-center text-gray-300 hover:text-white" href="design.html">
+                            <span class="mr-2">#</span>
+                            design
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="p-4 border-t border-gray-800">
+            <div class="flex items-center">
+                <img alt="Cartoon avatar of current user" class="w-8 h-8 rounded-full mr-2" height="32" src="https://storage.googleapis.com/a1aa/image/7NCGrKQMCt6GOFkCl6eo4AfxudQCKZLXqGyRDMAvX5XiepjnA.jpg" width="32"/>
+                <div>
+                    <p class="text-sm font-medium">Current User</p>
+                    <p class="text-xs text-gray-400">Online</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+        <!-- Header -->
+        <div class="bg-white border-b border-gray-200 flex items-center justify-between h-16 px-4">
+            <div class="flex items-center">
+                <h2 class="text-xl font-bold">#development</h2>
+            </div>
+        </div>
+        <!-- Chat Area -->
+        <div class="flex-1 overflow-y-auto p-4" id="chat-area">
+            <div class="flex items-start mb-4">
+                <img alt="Cartoon avatar of Bob Johnson" class="w-12 h-12 rounded-full mr-4" height="48" src="https://storage.googleapis.com/a1aa/image/CilfuS8hZo0SSKRhfm4Yfr1wPi1nrEb36ynqQg1fxx1O6THPB.jpg" width="48"/>
+                <div>
+                    <div class="flex items-center">
+                        <h3 class="font-bold">Bob Johnson</h3>
+                        <span class="ml-2 text-sm text-gray-500">11:00 AM</span>
+                    </div>
+                    <p class="mt-1">This is the development channel! Share ideas here 🎉</p>
+                </div>
+            </div>
+        </div>
+        <!-- Message Input -->
+        <div class="bg-white border-t border-gray-200 p-4">
+            <div class="flex items-center">
+                <input class="flex-1 border border-gray-300 rounded-lg p-2" id="message-input" placeholder="Type a message..." type="text"/>
+                <button class="ml-4 text-gray-500 hover:text-gray-700" id="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
